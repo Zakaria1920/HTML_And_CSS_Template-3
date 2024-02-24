@@ -1301,7 +1301,7 @@ a {
 .awesome {
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
-  background-image: url(img/background-image.webp);
+  background-image: url(../img/background-image.webp);
   background-size: cover;
   position: relative;
   z-index: 1;
@@ -1383,7 +1383,7 @@ a {
   padding: 0 20px;
 }
 .discount .image {
-  background-image: url(img/background-image.webp);
+  background-image: url(../img/background-image.webp);
   background-size: cover;
   position: relative;
   flex-basis: 100%;
@@ -1397,10 +1397,10 @@ a {
 @keyframes change-background {
   0%,
   100% {
-    background-image: url(img/background-image.webp);
+    background-image: url(../img/background-image.webp);
   }
   50% {
-    background-image: url(img/background-image-2.jpg);
+    background-image: url(../img/background-image-2.jpg);
   }
 }
 .discount .image::before {
