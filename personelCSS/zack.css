@@ -902,7 +902,7 @@ a {
   background-color: var(--section-background);
   position: relative;
 }
-.our-skills .skill::before {
+.our-skills .skill .count {
   content: attr(data-skill);
   position: absolute;
   top: -35px;
@@ -914,11 +914,16 @@ a {
   padding: 3px 5px;
   border-radius: 4px;
 }
+.our-skills .skill .count::after {
+  content: "%";
+}
 .our-skills .skill span {
   position: relative;
   display: block;
   background-color: var(--main-color);
+  width: 0;
   height: 100%;
+  transition: width 1.5s ease;
 }
 /* End OurSkills  */
 /* Start How It Work */
