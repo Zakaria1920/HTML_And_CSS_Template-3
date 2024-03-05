@@ -17,6 +17,15 @@ html {
   --main-transition: 0.3s;
   --main-padding: 100px;
 }
+.page-prog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+  width: 0;
+  height: 5px;
+  z-index: 9999;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -1033,7 +1042,6 @@ a {
 .events .info .time .unit {
   border: 1px solid #d4c1c1;
   border-radius: 5px;
-  width: 80px;
   transition: var(--main-transition);
 }
 .events .info .time .unit:hover,
@@ -1085,14 +1093,14 @@ a {
     border-radius: 0;
   }
 }
-.events .subscribe form input[type="email"] {
+.events .subscribe form input.em {
   padding: 20px;
   border: none;
   border-radius: inherit;
   flex: 1;
   caret-color: var(--main-color);
 }
-.events .subscribe form input[type="email"]:focus {
+.events .subscribe form input.em:focus {
   outline: none;
 }
 @media (max-width: 767px) {
@@ -1101,10 +1109,10 @@ a {
     padding: 10px;
   }
 }
-.events .subscribe form input[type="email"]::placeholder {
+.events .subscribe form input.em::placeholder {
   transition: opacity var(--main-transition);
 }
-.events .subscribe form input[type="email"]:focus::placeholder {
+.events .subscribe form input.em:focus::placeholder {
   opacity: 0;
 }
 .events .subscribe form input[type="submit"] {
@@ -1138,32 +1146,6 @@ a {
   position: relative;
   z-index: 1;
 }
-.pricing .box::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 50%;
-  top: 0;
-  left: 0;
-  background-color: #eee;
-  z-index: -1;
-  transition: var(--main-transition);
-}
-.pricing .box::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 50%;
-  bottom: 0;
-  right: 0;
-  background-color: #eee;
-  z-index: -1;
-  transition: var(--main-transition);
-}
-.pricing .box:hover::before,
-.pricing .box:hover::after {
-  width: 100%;
-}
 .pricing .box span.mark {
   position: absolute;
   background-color: #5ac3d3;
@@ -1183,6 +1165,9 @@ a {
 }
 .pricing .box:nth-child(2) {
   transform: translateY(-20px);
+}
+.pricing .box:nth-child(2) .price-chang select {
+  transform: translateY(-1px);
 }
 @media (max-width: 992px) {
   .pricing .box:nth-child(2) {
@@ -1204,13 +1189,24 @@ a {
   align-items: center;
   margin-bottom: 20px;
 }
-.pricing .box .price span:first-child {
+.pricing .box .price span.priceC {
   font-size: 3rem;
+}
+.pricing .box .price span.priceC,
+.pricing .box .price span.priceN {
   font-weight: bold;
   color: #5ac3d3;
 }
-.pricing .box .price span:last-child {
+.pricing .box .price span.per {
   color: #777;
+}
+.pricing .price-chang {
+  text-align: center;
+}
+.pricing .price-chang select {
+  padding: 5px 10px;
+  color: #5ac3d3;
+  font-weight: bold;
 }
 .pricing .box ul {
   margin-bottom: 20px;
