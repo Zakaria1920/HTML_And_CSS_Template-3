@@ -912,7 +912,7 @@ a {
   position: relative;
 }
 .our-skills .skill .count {
-  content: attr(data-skill);
+  content: "0";
   position: absolute;
   top: -35px;
   right: 0;

@@ -40,7 +40,7 @@ function startCoun(el) {
 
 // *************** //
 
-let targetDate = new Date("Mar 31 2024 23:59:59");
+let targetDate = new Date("May 23 2030 22:55:29");
 let counter = setInterval(() => {
   let date = new Date();
   let finalDate = targetDate - date;
@@ -60,8 +60,11 @@ let counter = setInterval(() => {
     minutes < 10 ? `0${minutes}` : minutes;
   document.querySelector(".time .unit span.seconds").innerHTML =
     seconds < 10 ? `0${seconds}` : seconds;
-
-  if (targetDate < 0) {
+  if (finalDate < 1000) {
+    document.querySelector(".time .unit span.days").innerHTML = "00";
+    document.querySelector(".time .unit span.hours").innerHTML = "00";
+    document.querySelector(".time .unit span.minutes").innerHTML = "00";
+    document.querySelector(".time .unit span.seconds").innerHTML = "00";
     clearInterval(counter);
   }
 }, 1000);
